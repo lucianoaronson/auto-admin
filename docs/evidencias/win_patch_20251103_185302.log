@@ -1,0 +1,20 @@
+﻿== AVAILABLE UPDATES ==
+
+ComputerName Status     KB          Size Title                                                                                                                                  
+------------ ------     --          ---- -----                                                                                                                                  
+DESKTOP-0... -------    KB5002623    2MB Actualización para Microsoft Office 2016 (KB5002623) Edición de 64 bits                                                                
+DESKTOP-0... -------               292MB Advanced Micro Devices, Inc. - Display - 2/20/2019 12:00:00 AM - 25.20.15025.1002                                                      
+
+
+== INSTALL ==
+
+X ComputerName Result     KB          Size Title                                                                                                                                
+- ------------ ------     --          ---- -----                                                                                                                                
+1 DESKTOP-0... Accepted   KB5002623    2MB Actualización para Microsoft Office 2016 (KB5002623) Edición de 64 bits                                                              
+1 DESKTOP-0... Accepted              292MB Advanced Micro Devices, Inc. - Display - 2/20/2019 12:00:00 AM - 25.20.15025.1002                                                    
+2 DESKTOP-0... Downloaded KB5002623    2MB Actualización para Microsoft Office 2016 (KB5002623) Edición de 64 bits                                                              
+2 DESKTOP-0... Downloaded            292MB Advanced Micro Devices, Inc. - Display - 2/20/2019 12:00:00 AM - 25.20.15025.1002                                                    
+3 DESKTOP-0... Installed  KB5002623    2MB Actualización para Microsoft Office 2016 (KB5002623) Edición de 64 bits                                                              
+3 DESKTOP-0... Installed             292MB Advanced Micro Devices, Inc. - Display - 2/20/2019 12:00:00 AM - 25.20.15025.1002                                                    
+
+
