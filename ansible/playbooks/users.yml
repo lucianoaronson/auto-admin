@@ -1,0 +1,14 @@
+- hosts: linux
+  become: true
+  vars_files:
+    - ../group_vars/all.yml
+
+  tasks:
+    - name: Crear usuarios declarativos
+      ansible.builtin.user:
+        name: "{{ item.name }}"
+        comment: "{{ item.comment | default('') }}"
+        groups: "{{ item.groups | default([]) | join(',') }}"
+        state: present
+        shell: /bin/bash
+      loop: "{{ users }}"

@@ -1,0 +1,19 @@
+- hosts: linux
+  become: true
+  vars_files:
+    - ../group_vars/all.yml
+
+  tasks:
+    - name: Asegurar permisos ejecutables
+      ansible.builtin.file:
+        path: "{{ repo_root }}/linux/patch/patch_linux.sh"
+        mode: "0755"
+
+    - name: Parchar sistema
+      ansible.builtin.command: bash -lc "{{ repo_root }}/linux/patch/patch_linux.sh"
+      args: { chdir: "{{ repo_root }}" }
+      register: patch_out
+      changed_when: "'[DONE]' in patch_out.stdout or 'Reboot' in patch_out.stdout"
+
+    - name: Mostrar salida
+      ansible.builtin.debug: { var: patch_out.stdout }

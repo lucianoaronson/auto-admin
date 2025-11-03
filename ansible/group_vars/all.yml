@@ -1,0 +1,7 @@
+users:
+  - name: jansible
+    comment: "Usuario creado por Ansible"
+    groups: [sudo]
+
+# raíz del repo (los playbooks ejecutan scripts desde acá)
+repo_root: "{{ inventory_dir }}/.."

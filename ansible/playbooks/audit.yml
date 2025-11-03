@@ -1,0 +1,19 @@
+- hosts: linux
+  become: true
+  vars_files:
+    - ../group_vars/all.yml
+
+  tasks:
+    - name: Asegurar permisos ejecutables
+      ansible.builtin.file:
+        path: "{{ repo_root }}/linux/audit/audit_logs.sh"
+        mode: "0755"
+
+    - name: Ejecutar auditoría
+      ansible.builtin.command: bash -lc "{{ repo_root }}/linux/audit/audit_logs.sh"
+      args: { chdir: "{{ repo_root }}" }
+      register: audit_out
+      changed_when: true
+
+    - name: Mostrar salida
+      ansible.builtin.debug: { var: audit_out.stdout }
