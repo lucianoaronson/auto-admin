@@ -30,9 +30,11 @@ fi
 getent passwd | awk -F: '{print $1";"$3}' \
 | while IFS=";" read -r u uid; do
     if [[ "$uid" -ge 1000 ]]; then
-      cdate=$(sudo chage -l "$u" 2>/dev/null | awk -F: '/Last password change/{print $2}' | xargs)
+      cdate=$((sudo chage -l "$u" 2>/dev/null || true) | awk -F: '/Last password change/{print $2}' | xargs)
       echo "$(hostname),user_info,$(date +%F),\"$u (pwd_change:$cdate)\"" >> "$REPORT"
     fi
   done
 
 echo "[DONE] Reporte generado: $REPORT"
+echo "[DONE] Reporte generado: $REPORT"
+exit 0

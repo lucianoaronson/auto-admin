@@ -1,0 +1,5 @@
+[INFO] Iniciando backup -> /mnt/c/Users/rc/Desktop/Projects_Automatizacion/auto-admin/../../docs/evidencias/backups-linux/backup_2025-11-04_000053.tar.gz
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+[INFO] Rotación: borrando backups > 3 días
+[DONE] Backup OK: /mnt/c/Users/rc/Desktop/Projects_Automatizacion/auto-admin/../../docs/evidencias/backups-linux/backup_2025-11-04_000053.tar.gz

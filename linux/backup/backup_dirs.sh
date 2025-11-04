@@ -3,7 +3,13 @@ set -euo pipefail
 
 # Base del repo (2 niveles arriba de este script)
 BASE_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")"/../.. && pwd)"
-
+# Si viene DEST_DIR_REL desde backup.conf, convertirlo a absoluto dentro del repo.
+if [[ -n "${DEST_DIR_REL:-}" ]]; then
+  DEST_DIR="$BASE_DIR/$DEST_DIR_REL"
+fi
+# Si DEST_DIR no quedó seteado, por defecto al repo:
+DEST_DIR="${DEST_DIR:-$BASE_DIR/docs/evidencias/backups-linux}"
+# -----------------------------------------------
 # Carga la config (define SRC_DIRS, DEST_DIR, RETAIN_DAYS)
 . "$(dirname -- "${BASH_SOURCE[0]}")/backup.conf"
 
